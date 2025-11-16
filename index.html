@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Wedding</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Wedding fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main>
+
+  <!-- RSVP CARD -->
+  <section id="rsvp-card" class="invite-card">
+    <div class="flower-corner"></div> <!-- FLOWER DECORATION -->
+
+    <div class="invite-logo">
+      <img src="bilder/logo_hochzeit.jpg" alt="Wedding logo">
+    </div>
+
+    <p class="invite-tagline">You are warmly invited</p>
+    <h1 class="invite-title">Will you join us?</h1>
+
+    <p class="invite-text">
+      Please let us know if you will attend our wedding celebration.
+    </p>
+
+    <div class="invite-buttons">
+      <button class="btn btn-yes" type="button">Yes, I will attend</button>
+      <button class="btn btn-no" type="button">Sorry, I cannot attend</button>
+    </div>
+
+    <div id="invite-message" class="invite-message"></div>
+
+    <form id="details-form" class="details-form" hidden>
+      <p class="details-text">Thank you. Please write your name and number of guests.</p>
+      <input id="guest-name" type="text" placeholder="Name / Family">
+      <input id="guest-count" type="number" min="1" placeholder="Number of guests">
+      <button type="submit" class="btn btn-small">Confirm</button>
+    </form>
+  </section>
+
+  <!-- INVITATION CARD SLIDER -->
+  <section class="card-gallery">
+    <h2 class="gallery-heading">Our Invitation Card</h2>
+    <p class="gallery-sub">Swipe through the pages of our invitation.</p>
+
+    <div class="card-slider">
+      <button class="card-nav card-prev">❮</button>
+
+      <div class="card-frame">
+        <img src="bilder/card1.jpg" class="card-image active">
+        <img src="bilder/card2.jpg" class="card-image">
+        <img src="bilder/card3.jpg" class="card-image">
+      </div>
+
+      <button class="card-nav card-next">❯</button>
+    </div>
+
+    <div class="card-dots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Created with love by us for you
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
