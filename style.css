@@ -63,15 +63,16 @@ main {
 }
 
 /* === FLOWER DECORATION === */
-.flower-corner {
+/* angepasst an deine Klasse "flower-corners" aus dem HTML */
+.flower-corners {
   pointer-events: none;
   position: absolute;
   inset: 0;
   border-radius: inherit;
 }
 
-.flower-corner::before,
-.flower-corner::after {
+.flower-corners::before,
+.flower-corners::after {
   content: "";
   position: absolute;
   width: 120px;
@@ -82,13 +83,13 @@ main {
   opacity: 0.55;
 }
 
-.flower-corner::before {
+.flower-corners::before {
   top: -30px;
   left: -30px;
   transform: rotate(-15deg);
 }
 
-.flower-corner::after {
+.flower-corners::after {
   bottom: -30px;
   right: -30px;
   transform: rotate(15deg);
@@ -266,6 +267,18 @@ footer {
   color: var(--text-soft);
 }
 
+/* (optional noch drin, aber aktuell nicht genutzt – schadet nicht) */
+.google-form-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  background: #ffffffee;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
 /* =========================================
    RESPONSIVE / MOBILE & DESKTOP ANPASSUNGEN
    ========================================= */
@@ -274,7 +287,7 @@ footer {
 @media (max-width: 600px) {
 
   body {
-    background-attachment: scroll;          /* fixed macht auf Handy oft Probleme */
+    background-attachment: scroll;
     background-position: top center;
   }
 
@@ -308,7 +321,6 @@ footer {
     font-size: 0.95rem;
   }
 
-  /* Buttons untereinander, gut klickbar */
   .invite-buttons {
     flex-direction: column;
     align-items: stretch;
@@ -329,7 +341,7 @@ footer {
   }
 }
 
-/* noch kleinere Geräte, z.B. sehr schmale Smartphones */
+/* sehr schmale Smartphones */
 @media (max-width: 400px) {
   .invite-card,
   .card-gallery {
