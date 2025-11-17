@@ -51,7 +51,7 @@ main {
 
 /* === INVITE CARD === */
 .invite-card {
-  max-width: 480px;
+  max-width: 780px;
   width: 100%;
   background: var(--card-bg);
   border-radius: 1.5rem;
@@ -184,7 +184,7 @@ main {
 
 /* === CARD SLIDER === */
 .card-gallery {
-  max-width: 100%;
+  max-width: 780px;
   width: 100%;
   background: #ffffffee;
   border-radius: 1.3rem;
@@ -211,7 +211,9 @@ main {
   flex: 1;
   position: relative;
   height: 0;
-  padding-bottom: 70%;
+  padding-bottom: 100%;
+  border: #a88335;
+  border-radius: 20% ;
 }
 
 .card-image {
@@ -263,7 +265,10 @@ footer {
   margin-top: 20px;
   text-align: center;
   font-family: "Playfair Display", serif;
-  color: var(--text-soft);
+  color: snow;
+  border: 2px solid #ead9be;
+   border-radius: 1.4rem;
+   background-color: #6f615c;
 }
 
 /* === RSVP STATS SUMMARY === */
@@ -350,7 +355,7 @@ footer {
 @media (max-width: 600px) {
 
   body {
-    background-attachment: scroll;
+    background-attachment: fixed;
     background-position: top center;
   }
 
@@ -373,7 +378,7 @@ footer {
   }
 
   .invite-tagline {
-    font-size: 1.8rem;
+    font-size: .8rem;
   }
 
   .invite-title {
@@ -440,24 +445,4 @@ footer {
   }
 }
 
-/* Tablet & Desktop: zwei Sektionen nebeneinander, Stats darunter zentriert */
-@media (min-width: 900px) {
-  main {
-    flex-direction: row;          /* nebeneinander */
-    align-items: flex-start;
-    justify-content: center;
-    gap: 2rem;
-    max-width: 1100px;
-    margin-inline: auto;
-  }
 
-  .invite-card,
-  .card-gallery {
-    max-width: 520px;
-    flex: 1 1 0;                  /* gleiche Breite */
-  }
-
-  .rsvp-stats {
-    margin-top: 0;
-  }
-}
