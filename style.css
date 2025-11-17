@@ -63,7 +63,6 @@ main {
 }
 
 /* === FLOWER DECORATION === */
-/* angepasst an deine Klasse "flower-corners" aus dem HTML */
 .flower-corners {
   pointer-events: none;
   position: absolute;
@@ -267,16 +266,80 @@ footer {
   color: var(--text-soft);
 }
 
-/* (optional noch drin, aber aktuell nicht genutzt – schadet nicht) */
-.google-form-wrapper {
+/* === RSVP STATS SUMMARY === */
+.rsvp-stats {
+  max-width: 520px;
   width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  border-radius: 1.2rem;
-  overflow: hidden;
+  margin: 0 auto 3rem;
   background: #ffffffee;
-  padding: 1rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border-radius: 1.4rem;
+  border: 2px solid #ead9be;
+  padding: 1.8rem 1.6rem;
+  box-shadow: 0 10px 28px rgba(120, 92, 56, 0.16);
+}
+
+.rsvp-stats-heading {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  color: var(--gold-dark);
+  margin-top: 0;
+  margin-bottom: 1.1rem;
+}
+
+.rsvp-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.rsvp-stat-card {
+  border-radius: 1rem;
+  padding: 0.85rem 0.6rem;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.04);
+  background: #fffdf8;
+}
+
+.rsvp-stat-label {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 0.3rem;
+}
+
+.rsvp-stat-value {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* Farb-Akzente wie deine Buttons */
+.rsvp-stat-yes {
+  border-color: var(--yes-soft);
+  background: var(--yes-soft);
+  color: var(--yes);
+}
+
+.rsvp-stat-no {
+  border-color: var(--no-soft);
+  background: var(--no-soft);
+  color: var(--no);
+}
+
+.rsvp-stat-total {
+  border-color: var(--gold);
+  background: #fdf5e7;
+  color: var(--gold-dark);
+}
+
+.rsvp-stats-note {
+  margin-top: 0.9rem;
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--text-soft);
 }
 
 /* =========================================
@@ -287,7 +350,7 @@ footer {
 @media (max-width: 600px) {
 
   body {
-    background-attachment: scroll;
+    background-attachment: fixed;
     background-position: top center;
   }
 
@@ -310,7 +373,7 @@ footer {
   }
 
   .invite-tagline {
-    font-size: 1.8rem;
+    font-size: 2.8rem;
   }
 
   .invite-title {
@@ -339,6 +402,22 @@ footer {
     width: 34px;
     height: 34px;
   }
+
+  .rsvp-stats {
+    padding: 1.6rem 1.3rem;
+  }
+
+  .rsvp-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rsvp-stat-card {
+    padding: 1rem 0.8rem;
+  }
+
+  .rsvp-stat-value {
+    font-size: 1.6rem;
+  }
 }
 
 /* sehr schmale Smartphones */
@@ -361,7 +440,7 @@ footer {
   }
 }
 
-/* Tablet & Desktop: beide Sektionen nebeneinander, gleich breit */
+/* Tablet & Desktop: zwei Sektionen nebeneinander, Stats darunter zentriert */
 @media (min-width: 900px) {
   main {
     flex-direction: row;          /* nebeneinander */
@@ -376,5 +455,9 @@ footer {
   .card-gallery {
     max-width: 520px;
     flex: 1 1 0;                  /* gleiche Breite */
+  }
+
+  .rsvp-stats {
+    margin-top: 0;
   }
 }
