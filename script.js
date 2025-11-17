@@ -1,5 +1,5 @@
 
-ocument.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   // =========================
   // RSVP (Yes / No)
   // =========================
