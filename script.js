@@ -32,10 +32,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (index >= images.length) index = 0;
     currentIndex = index;
 
+    // aktive Karte setzen
     images.forEach((img, i) => {
       img.classList.toggle("active", i === currentIndex);
     });
 
+    // aktive Punkte setzen (falls vorhanden)
     dots.forEach((dot, i) => {
       dot.classList.toggle("active", i === currentIndex);
     });
@@ -64,4 +66,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Startzustand
   showSlide(0);
+
+  // === POPUP / LIGHTBOX FÜR DIE BILDER + DOWNLOAD ===
+  const popup      = document.getElementById("image-popup");
+  const popupImg   = document.getElementById("popup-img");
+  const closeBtn   = document.querySelector(".popup-close");
+  const downloadBtn = document.getElementById("download-btn");
+
+  if (popup && popupImg && downloadBtn) {
+    // Alle Slider-Bilder klickbar machen
+    images.forEach(img => {
+      img.style.cursor = "pointer";
+      img.addEventListener("click", () => {
+        // Popup sichtbar machen
+        popup.style.display = "flex";
+
+        // Bild setzen
+        popupImg.src = img.src;
+        popupImg.alt = img.alt || "";
+
+        // Download-Link auf das aktuelle Bild setzen
+        downloadBtn.href = img.src;
+
+        // Sinnvollen Dateinamen setzen (z.B. card1.jpg)
+        const parts = img.src.split("/");
+        downloadBtn.download = parts[parts.length - 1] || "bild.jpg";
+      });
+    });
+
+    // Schließen über X
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        popup.style.display = "none";
+        popupImg.src = "";
+      });
+    }
+
+    // Klick auf den dunklen Hintergrund schließt das Popup
+    popup.addEventListener("click", (e) => {
+      if (e.target === popup) {
+        popup.style.display = "none";
+        popupImg.src = "";
+      }
+    });
+  }
 });
